@@ -16,6 +16,7 @@ sys.path.insert(0, str(project_root))
 from larapy.foundation.application import Application
 from larapy.support.facades.facade import Facade
 from larapy.database.orm import DatabaseManager, Schema
+from larapy.view.engine import ViewEngine
 from app.Providers import AppServiceProvider
 
 
@@ -28,6 +29,11 @@ def create_application():
     
     # Set up facades
     Facade.set_facade_application(app)
+    
+    # Set up view engine
+    view_engine = ViewEngine()
+    view_engine.init_app(app.flask_app)
+    app.instance('view_engine', view_engine)
     
     # Register core service providers
     app.register(AppServiceProvider(app))
@@ -86,7 +92,7 @@ def load_routes(app):
     # Load web routes
     try:
         from routes.web import register_routes
-        register_routes(router)
+        register_routes(router, app)
     except ImportError:
         # Set up basic route if routes not configured
         from larapy.http.response import Response

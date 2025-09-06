@@ -1,0 +1,75 @@
+<footer class="bg-gray-800 text-white mt-auto">
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- About -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Larapy Framework</h3>
+                <p class="text-gray-300 text-sm">
+                    A Laravel-inspired Python web framework built on Flask, bringing familiar concepts like Service Container, Eloquent ORM, and Middleware to Python development.
+                </p>
+            </div>
+            
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                    <li><a href="/about" class="text-gray-300 hover:text-white transition-colors">About</a></li>
+                    <li><a href="/contact" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                    <li><a href="/health" class="text-gray-300 hover:text-white transition-colors">Health Check</a></li>
+                </ul>
+            </div>
+            
+            <!-- API -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">API Endpoints</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/api/status" class="text-gray-300 hover:text-white transition-colors">API Status</a></li>
+                    <li><a href="/api/users" class="text-gray-300 hover:text-white transition-colors">Users API</a></li>
+                    <li><a href="/demo/container" class="text-gray-300 hover:text-white transition-colors">Container Demo</a></li>
+                    <li><a href="/demo/orm" class="text-gray-300 hover:text-white transition-colors">ORM Demo</a></li>
+                </ul>
+            </div>
+            
+            <!-- Framework Info -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Framework</h3>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li><span class="font-medium">Version:</span> 1.0.0</li>
+                    <li><span class="font-medium">Base:</span> Flask + Python</li>
+                    <li><span class="font-medium">Style:</span> Laravel Concepts</li>
+                    <li><span class="font-medium">Frontend:</span> Tailwind + Vue.js</li>
+                </ul>
+            </div>
+        </div>
+        
+        <hr class="border-gray-700 my-8">
+        
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="text-sm text-gray-300">
+                © {{ current_year }} Larapy Framework. Built with ❤️ using Laravel concepts in Python.
+            </div>
+            
+            <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                <div class="flex items-center space-x-2 text-sm text-gray-300">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span>Service Container</span>
+                </div>
+                <div class="flex items-center space-x-2 text-sm text-gray-300">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm12 2H4v8h12V6z"></path>
+                    </svg>
+                    <span>Eloquent ORM</span>
+                </div>
+                <div class="flex items-center space-x-2 text-sm text-gray-300">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span>Middleware</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

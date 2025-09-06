@@ -1,0 +1,197 @@
+{% extends "layouts/app.html" %}
+
+{% block title %}About - Larapy Framework{% endblock %}
+
+{% block content %}
+<div id="app">
+    <!-- Page Header -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">About Larapy Framework</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                {{ title }} - Bringing Laravel's elegant patterns and powerful features to Python Flask development.
+            </p>
+        </div>
+    </section>
+
+    <!-- Framework Overview -->
+    <section class="bg-gray-50 py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-3xl font-bold mb-6">Laravel Concepts in Python</h3>
+                        <p class="text-gray-600 mb-6">
+                            Larapy brings the beloved Laravel framework patterns to Python Flask, allowing developers to leverage familiar concepts like Service Container, Eloquent ORM, and Middleware in a Python environment.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700">Familiar Laravel syntax and patterns</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700">Python's simplicity and power</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700">Flask's lightweight foundation</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-8 card-shadow">
+                        <h4 class="text-xl font-semibold mb-4">Framework Stats</h4>
+                        <div class="space-y-4">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Version</span>
+                                <span class="font-semibold">{{ app_version }}</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Base Framework</span>
+                                <span class="font-semibold">Flask 2.0+</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Python Version</span>
+                                <span class="font-semibold">3.8+</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Template Engine</span>
+                                <span class="font-semibold">Jinja2</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Frontend</span>
+                                <span class="font-semibold">Tailwind + Vue.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Detail -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-12">Core Features</h3>
+            
+            <div class="max-w-6xl mx-auto">
+                {% for feature in features %}
+                <div class="mb-8 p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                {% if loop.index == 1 %}
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                                {% elif loop.index == 2 %}
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+                                {% elif loop.index == 3 %}
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                {% elif loop.index == 4 %}
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                {% elif loop.index == 5 %}
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                {% else %}
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                {% endif %}
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">{{ feature }}</h4>
+                            <p class="text-gray-600">
+                                {% if loop.index == 1 %}
+                                IoC container that manages class dependencies and performs dependency injection, providing a powerful mechanism for managing class instances and their dependencies.
+                                {% elif loop.index == 2 %}
+                                ActiveRecord implementation that includes relationships, query builder, and schema builder for database interactions with an intuitive, Laravel-like syntax.
+                                {% elif loop.index == 3 %}
+                                HTTP middleware pipeline that filters HTTP requests entering your application, perfect for authentication, CORS, request logging, and more.
+                                {% elif loop.index == 4 %}
+                                Modular service registration system that organizes application bootstrapping and binds services into the container during application startup.
+                                {% elif loop.index == 5 %}
+                                Environment-based configuration management with dot notation access and automatic loading from .env files and configuration files.
+                                {% else %}
+                                Powerful template engine that provides layout inheritance, partials, filters, and modern frontend integration with Tailwind CSS and Vue.js.
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section class="bg-gray-50 py-16">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-12">Architecture Overview</h3>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-lg p-8 card-shadow">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
+                                </svg>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-2">Request Layer</h4>
+                            <p class="text-gray-600 text-sm">HTTP request handling with middleware pipeline and routing</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                                </svg>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-2">Application Layer</h4>
+                            <p class="text-gray-600 text-sm">Service container, providers, and business logic</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+                                </svg>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-2">Data Layer</h4>
+                            <p class="text-gray-600 text-sm">ORM, models, and database interactions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="gradient-bg text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-3xl font-bold mb-4">Experience Laravel in Python</h3>
+            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                Explore the framework features and see how familiar Laravel patterns work seamlessly in Python.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/demo/container" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+                    Try Container Demo
+                </a>
+                <a href="/demo/orm" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                    Explore ORM
+                </a>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
