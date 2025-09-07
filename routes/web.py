@@ -26,3 +26,6 @@ def register_routes(router, app):
     router.get('/demo/container', controller.demo_container)
     router.get('/demo/orm', controller.demo_orm)
     router.get('/demo/middleware', controller.demo_middleware)
+    
+    # Test route for Jinja2 extensions
+    router.get('/test/extensions', controller.test_extensions)

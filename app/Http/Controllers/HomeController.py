@@ -206,3 +206,17 @@ class HomeController:
             'request_info': middleware_info,
             'headers': dict(request.headers) if hasattr(request, 'headers') else {}
         })
+    
+    def test_extensions(self):
+        """Test Jinja2 extensions (auth, guest, csrf, etc.)"""
+        from flask import session
+        
+        # Set some test errors for demonstration
+        session['errors'] = {
+            'email': 'Email is required',
+            'password': 'Password must be at least 8 characters'
+        }
+        
+        return render_template('test_extensions.html',
+            title='Jinja2 Extensions Test'
+        )
