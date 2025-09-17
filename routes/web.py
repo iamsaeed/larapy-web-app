@@ -7,9 +7,6 @@ def register_routes(router, app):
     
     from app.Http.Controllers.HomeController import HomeController
     
-    # Initialize controller
-    controller = HomeController()
-    
     # Web routes (return HTML views)
-    router.get('/', controller.index)
-    router.get('/contact', controller.contact)
+    router.get('/', HomeController().index)
+    router.get('/contact', HomeController().contact)
