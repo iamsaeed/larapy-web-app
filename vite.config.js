@@ -5,6 +5,12 @@ import { resolve } from 'path';
 export default defineConfig({
   plugins: [vue()],
 
+  resolve: {
+    alias: {
+      'vue': 'vue/dist/vue.esm-bundler.js'
+    }
+  },
+
   build: {
     outDir: 'public/build',
     emptyOutDir: true,
