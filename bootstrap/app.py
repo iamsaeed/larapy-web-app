@@ -32,7 +32,7 @@ def create_application():
     
     # Set up view engine
     view_engine = ViewEngine()
-    view_engine.init_app(app.flask_app)
+    view_engine.init_app(app.flask_app, str(project_root))
     app.instance('view_engine', view_engine)
     
     # Register core service providers
@@ -105,3 +105,7 @@ def load_routes(app):
 
 # Create the application instance
 app = create_application()
+
+if __name__ == '__main__':
+    # Run the Flask application
+    app.flask_app.run(debug=True, host='0.0.0.0', port=5000)

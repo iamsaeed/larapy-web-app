@@ -11,67 +11,8 @@
                 Welcome to <span class="text-yellow-300">Larapy</span>
             </h2>
             <p class="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto">
-                Laravel concepts reimagined in Python Flask. Experience familiar patterns with the power and simplicity of Python.
+                MVP concepts reimagined in Python Flask. Experience familiar patterns with the power and simplicity of Python.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button @click="showDemo = !showDemo" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
-                    {{ showDemo ? 'Hide Demo' : 'Show Live Demo' }}
-                </button>
-                <a href="/about" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-                    Learn More
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Live Demo Section -->
-    <section v-if="showDemo" class="bg-white py-16">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <h3 class="text-3xl font-bold text-center mb-8">Live Framework Demo</h3>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Service Container Demo -->
-                    <div class="card-shadow rounded-lg p-6 bg-gray-50">
-                        <h4 class="text-xl font-semibold mb-4 flex items-center">
-                            <svg class="w-6 h-6 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                            </svg>
-                            Service Container
-                        </h4>
-                        <p class="text-gray-600 mb-4">Test dependency injection and service resolution:</p>
-                        <button @click="testContainer" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
-                            Test Container
-                        </button>
-                        <div v-if="containerResult" class="mt-4 p-3 bg-green-100 rounded text-sm">
-                            <strong>Result:</strong> {{ containerResult }}
-                        </div>
-                    </div>
-
-                    <!-- ORM Demo -->
-                    <div class="card-shadow rounded-lg p-6 bg-gray-50">
-                        <h4 class="text-xl font-semibold mb-4 flex items-center">
-                            <svg class="w-6 h-6 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
-                            </svg>
-                            Eloquent ORM
-                        </h4>
-                        <p class="text-gray-600 mb-4">Fetch data using Laravel-style models:</p>
-                        <button @click="testORM" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-colors">
-                            Load Users
-                        </button>
-                        <div v-if="ormResult.length > 0" class="mt-4 p-3 bg-green-100 rounded text-sm">
-                            <strong>Users:</strong>
-                            <ul class="mt-2">
-                                <li v-for="user in ormResult" :key="user.id" class="flex justify-between">
-                                    <span>{{ user.name }}</span>
-                                    <span class="text-gray-500">{{ user.email }}</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -88,7 +29,7 @@
                         </svg>
                     </div>
                     <h4 class="text-xl font-semibold mb-2">Service Container</h4>
-                    <p class="text-gray-600">IoC container with dependency injection, singleton binding, and automatic resolution just like Laravel.</p>
+                    <p class="text-gray-600">IoC container with dependency injection, singleton binding, and automatic resolution.</p>
                 </div>
 
                 <div class="bg-white rounded-lg p-6 card-shadow hover:shadow-lg transition-shadow">
@@ -98,7 +39,7 @@
                         </svg>
                     </div>
                     <h4 class="text-xl font-semibold mb-2">Eloquent ORM</h4>
-                    <p class="text-gray-600">ActiveRecord implementation with relationships, query builder, and migrations familiar to Laravel developers.</p>
+                    <p class="text-gray-600">ActiveRecord implementation with relationships, query builder, and migrations familiar concepts to web developers.</p>
                 </div>
 
                 <div class="bg-white rounded-lg p-6 card-shadow hover:shadow-lg transition-shadow">
@@ -118,7 +59,7 @@
                         </svg>
                     </div>
                     <h4 class="text-xl font-semibold mb-2">Service Providers</h4>
-                    <p class="text-gray-600">Organize application bootstrapping and service registration using Laravel's service provider pattern.</p>
+                    <p class="text-gray-600">Organize application bootstrapping and service registration using service provider pattern.</p>
                 </div>
 
                 <div class="bg-white rounded-lg p-6 card-shadow hover:shadow-lg transition-shadow">
@@ -150,16 +91,8 @@
         <div class="container mx-auto px-4 text-center">
             <h3 class="text-3xl font-bold mb-4">Ready to Get Started?</h3>
             <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                Explore the API endpoints and see Laravel concepts in action with Python Flask.
+                Explore the API endpoints and see MVP concepts in action with Python Flask.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/api/users" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
-                    Explore API
-                </a>
-                <a href="/contact" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-                    Get in Touch
-                </a>
-            </div>
         </div>
     </section>
 </div>
