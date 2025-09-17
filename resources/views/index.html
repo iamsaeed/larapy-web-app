@@ -3,7 +3,7 @@
 {% block title %}Home - Larapy Framework{% endblock %}
 
 {% block content %}
-<div id="app">
+<div>
     <!-- Hero Section -->
     <section class="gradient-bg text-white py-20">
         <div class="container mx-auto px-4 text-center">
@@ -93,43 +93,19 @@
             <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
                 Explore the API endpoints and see MVP concepts in action with Python Flask.
             </p>
+
+            <!-- Example of using the global Vue component anywhere in a view -->
+            <div class="mt-8">
+                <h4 class="text-lg font-semibold mb-4">Vue.js Component Demo</h4>
+                <div class="flex justify-center">
+                    <div data-vue-component="test-component"></div>
+                </div>
+            </div>
         </div>
     </section>
 </div>
 {% endblock %}
 
 {% block scripts %}
-<script>
-    const { createApp } = Vue;
-    
-    createApp({
-        data() {
-            return {
-                showDemo: false,
-                containerResult: '',
-                ormResult: []
-            }
-        },
-        methods: {
-            async testContainer() {
-                try {
-                    const response = await fetch('/demo/container');
-                    const data = await response.json();
-                    this.containerResult = `${data.message} - ${data.resolved_services.join(', ')}`;
-                } catch (error) {
-                    this.containerResult = 'Error testing container';
-                }
-            },
-            async testORM() {
-                try {
-                    const response = await fetch('/api/users');
-                    const data = await response.json();
-                    this.ormResult = data.data || [];
-                } catch (error) {
-                    this.ormResult = [];
-                }
-            }
-        }
-    }).mount('#app');
-</script>
+<!-- Vue functionality now handled by Vite-compiled assets -->
 {% endblock %}

@@ -43,7 +43,10 @@ def create_application():
     
     # Load routes
     load_routes(app)
-    
+
+    # Configure static file serving for build assets
+    setup_static_assets(app)
+
     return app
 
 
@@ -88,7 +91,7 @@ def load_routes(app):
     """Load application routes"""
     # Get router instance
     router = app.resolve('router')
-    
+
     # Load web routes
     try:
         from routes.web import register_routes
@@ -101,6 +104,19 @@ def load_routes(app):
             'framework': 'Laravel concepts in Python Flask',
             'status': 'Application bootstrapped successfully'
         }))
+
+
+def setup_static_assets(app):
+    """Setup static file serving for Vite build assets"""
+    from flask import send_from_directory
+    import os
+
+    build_path = os.path.join(app.base_path(), 'public', 'build')
+
+    @app.flask_app.route('/build/<path:filename>')
+    def build_assets(filename):
+        """Serve Vite build assets"""
+        return send_from_directory(build_path, filename)
 
 
 # Create the application instance

@@ -51,8 +51,8 @@ class LarapyUpdater:
                 print("✅ Testing import...")
             
             test_result = subprocess.run([
-                sys.executable, "-c", 
-                "import larapy; from larapy.core.application import Application; print('✅ Import successful')"
+                sys.executable, "-c",
+                "import larapy; from larapy.foundation.application import Application; print('✅ Import successful')"
             ], capture_output=True, text=True)
             
             if test_result.returncode == 0:
