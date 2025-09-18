@@ -3,7 +3,7 @@
 import os
 
 # Default database connection
-DEFAULT = os.getenv('DB_CONNECTION', 'sqlite')
+DEFAULT = os.getenv('DB_CONNECTION', 'mysql')
 
 # Database connections
 CONNECTIONS = {
@@ -20,7 +20,7 @@ CONNECTIONS = {
         'port': int(os.getenv('DB_PORT', '3306')),
         'database': os.getenv('DB_DATABASE', 'larapy'),
         'username': os.getenv('DB_USERNAME', 'root'),
-        'password': os.getenv('DB_PASSWORD', ''),
+        'password': os.getenv('DB_PASSWORD', 'root'),
         'charset': 'utf8mb4',
         'collation': 'utf8mb4_unicode_ci',
         'prefix': '',
