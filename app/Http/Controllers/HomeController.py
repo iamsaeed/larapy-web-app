@@ -30,3 +30,16 @@ class HomeController:
             title='Contact Us'
         )
     
+    def api_data(self):
+        """API endpoint returning JSON data"""
+        return {
+            'message': 'Hello from Larapy API',
+            'version': '1.0.0',
+            'status': 'success',
+            'data': [
+                {'id': 1, 'name': 'Item 1'},
+                {'id': 2, 'name': 'Item 2'},
+                {'id': 3, 'name': 'Item 3'},
+            ]
+        }
+    
